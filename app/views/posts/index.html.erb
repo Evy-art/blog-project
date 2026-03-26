@@ -1,0 +1,29 @@
+<div>
+  <h1 class="font-bold text-4xl">Posts#index</h1>
+  <p>Find me in app/views/posts/index.html.erb</p>
+
+  <table class="table-auto w-full mt-4">
+  <thead>
+  <tr>
+  <th class="border px-4 py-2"> ID</th>
+  <th class="border px-4 py-2"> Title</th>
+  <th class="border px-4 py-2"> Actions</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @posts.each do |post| %>
+    <tr>
+  <td class="border px-4 py-2"><%= post.id %></td>
+  <td class="border px-4 py-2"><%=  post.title %></td>
+  <td class="border px-4 py-2">
+  <%= link_to "Show", post_path(post), class: "text-blue-500 hover:underline" %>
+  <%= link_to "Edit", edit_post_path(post), class: "text-yellow-500 hover:underline ml-2" %>
+  <%= button_to "Delete", post_path(post), method: :delete, 
+  data: {turbo_confirm: "Are you sure?" }, class: "text-red-500 hover:underline ml-2" %>
+  </td>
+  </tr>
+  <% end %>
+  </tbody>
+  </table>
+</div>

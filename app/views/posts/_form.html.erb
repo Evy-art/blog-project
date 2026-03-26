@@ -1,0 +1,27 @@
+  <%= form_with model: @post do |form| %>
+
+    <% if @post.errors.any? %>
+    <div class="mb-4">
+    <h2 class="text-red-600 font-bold">Errors: </h2>
+    <ul class="list-disc list-inside text-red-600">
+    <% @post.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+    </div>
+    <% end %>
+
+    <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title, class: "border"%>
+    </div>
+
+    <div>
+    <%= form.label :body %><br>
+    <%= form.text_field :body, class: "border mb-3" %>
+    </div>
+
+    <div>
+    <%= form.submit class: "bg-blue-500 text-white px-4 py-2 rounded" %>
+    </div>
+    <% end %>
