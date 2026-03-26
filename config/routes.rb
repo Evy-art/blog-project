@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :blogs
+  resources :blogs do
+    resources :comments, only: [:create, :edit, :update, :destroy]
+  end
   get "posts", to: "posts#index", as: "posts"
   get "posts/new", to: "posts#new" 
   get "posts/:id", to: "posts#show", as: "post"
