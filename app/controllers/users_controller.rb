@@ -23,6 +23,13 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    user = current_user
+    sign_out(user)
+    user.destroy
+    redirect_to root_path, notice: "Your accou has been deleted."
+  end
+
   private
 
   def user_params_except_avatar
