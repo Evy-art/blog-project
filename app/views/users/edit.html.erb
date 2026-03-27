@@ -1,0 +1,16 @@
+<h1 class="text-3xl font-bold mb-6"> Edit Profile </h1>
+
+<%= form_with(model: @user, url: profile_path, method: :patch, local: true, html: {multipart: true}, class: "space-y-4") do |f| %>
+
+    <div>
+    <%= f.label :email, class: "block font-medium mb-1" %>
+    <%= f.email_field :email, class: "w-full border rounded-md p-2"%>
+    </div>
+
+    <div>
+    <%= f.label :avatar, class: "block font-medium mb-1" %>
+    <%= f.file_field :avatar, class: "w-full border rounded-md p-2"%>
+    </div>
+
+    <%= f.submit "Update Profile", class: "px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-md"%>
+    <% end %>
