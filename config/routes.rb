@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :blogs do
     resources :comments, only: [:create, :edit, :update, :destroy]
   end
@@ -9,7 +10,7 @@ Rails.application.routes.draw do
   get "posts/:id/edit", to: "posts#edit", as: "edit_post"
   patch "posts/:id", to: "posts#update"
   delete "posts/:id", to: "posts#destroy"
-
+  
   get "pages/home", to: "pages#home"
   get "pages/about", to: "pages#about"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -23,5 +24,5 @@ Rails.application.routes.draw do
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
   # Defines the root path route ("/")
-root "pages#home"
+root "blogs#index"
 end
