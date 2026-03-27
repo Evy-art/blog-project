@@ -26,7 +26,7 @@
   
   <div class="flex gap-3 items-center">
   <%if user_signed_in? %>
-  <span class="text-sm">Hello, <%= current_user.email %></span>
+  <span class="text-sm">Hello, <%= current_user.username %></span>
 
   <%= button_to "Logout", destroy_user_session_path,
       method: :delete,

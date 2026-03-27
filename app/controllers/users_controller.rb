@@ -26,6 +26,6 @@ class UsersController < ApplicationController
   private
 
   def user_params_except_avatar
-    params.require(:user).permit(:email)
+    params.require(:user).permit(:email, :username)
   end
 end

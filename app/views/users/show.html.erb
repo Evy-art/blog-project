@@ -1,5 +1,7 @@
+<div class="flex flex-col items-center justify-center w-screen md:">
 <h1 class="text-3xl font-bold mb-4"> My Profile <h1>
 
+<div class="border rounded-md">
 <div class="flex items-center gap-4">
 <%= image_tag(
     @user.avatar.attached? ? url_for(@user.avatar) : asset_path("default-avatar.png"),
@@ -7,7 +9,10 @@
 )%>
 
 <div>
+<p class="text-lg font-semibold"><%= @user.username %></p>
 <p class="text-lg font-semibold"><%= @user.email %></p>
 <%= link_to "Edit Profile", edit_profile_path, class: "mt-2 inline-block px-3 py-1.5 bg-green-600 hover:bg-green-500 text-white rounded-md" %>
+</div>
+</div>
 </div>
 </div>
