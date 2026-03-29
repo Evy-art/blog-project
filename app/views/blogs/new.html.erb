@@ -1,9 +1,17 @@
 <% content_for :title, "New blog" %>
 
-<div class="md:w-2/3 w-full">
+<div class="w-full md:px-70 sm:px-0">
   <h1 class="font-bold text-4xl">New blog</h1>
 
-  <%= render "form", blog: @blog %>
+<div class="w-full flex justify-center md:mt-10">
+  <div class="w-full max-w-2xl">
+    <%= render "form", blog: @blog %>
 
-  <%= link_to "Back to blogs", blogs_path, class: "w-full sm:w-auto text-center mt-2 sm:mt-0 sm:ml-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
+    <!-- Buttons row -->
+    <div class="-mt-13 flex flex-col sm:flex-row gap-2 sm:justify-end">
+      <%= link_to "Back to blogs",
+        blogs_path,
+        class: "rounded-xl px-4 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium text-center" %>
+    </div>
+  </div>
 </div>
