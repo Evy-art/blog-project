@@ -1,10 +1,25 @@
 <% content_for :title, "Editing blog" %>
 
-<div class="md:w-2/3 w-full">
-  <h1 class="font-bold text-4xl">Editing blog</h1>
+<div class="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="rounded-2xl border border-gray-200 bg-white p-6 sm:p-8 shadow-sm">
 
-  <%= render "form", blog: @blog %>
+    <div class="mb-8">
+      <h1 class="text-4xl font-bold tracking-tight text-gray-900">Editing blog</h1>
+      <p class="mt-2 text-sm text-gray-500">Update your blog content below.</p>
+    </div>
 
-  <%= link_to "Show this blog", @blog, class: "w-full sm:w-auto text-center mt-2 sm:mt-0 sm:ml-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
-  <%= link_to "Back to blogs", blogs_path, class: "w-full sm:w-auto text-center mt-2 sm:mt-0 sm:ml-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
+    <%= render "form", blog: @blog %>
+
+    <!-- Buttons -->
+    <div class="-mt-13 flex flex-col gap-3 sm:flex-row sm:justify-end">
+      <%= link_to "Show this blog",
+        @blog,
+        class: "inline-flex w-full sm:w-auto items-center justify-center rounded-xl bg-gray-100 px-4 py-2.5 text-center font-medium text-gray-700 transition hover:bg-gray-200" %>
+
+      <%= link_to "Back to blogs",
+        blogs_path,
+        class: "inline-flex w-full sm:w-auto items-center justify-center rounded-xl bg-gray-100 px-4 py-2.5 text-center font-medium text-gray-700 transition hover:bg-gray-200" %>
+    </div>
+
+  </div>
 </div>
